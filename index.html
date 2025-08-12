@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative English - Semester 4 Quiz Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .main-container {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .home-link {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            color: #1f2937;
+            transition: color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .home-link:hover {
+            color: #3b82f6;
+            transform: translateX(4px);
+        }
+        /* Styling for the new close button is now handled by Tailwind classes in the HTML */
+        .btn {
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .option-btn {
+            border: 2px solid transparent;
+        }
+        .option-btn.correct {
+            background-color: #10B981 !important;
+            color: white !important;
+            border-color: #059669;
+        }
+        .option-btn.incorrect {
+            background-color: #EF4444 !important;
+            color: white !important;
+            border-color: #DC2626;
+        }
+        .result-item {
+            border-left: 4px solid #3B82F6;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-6">
+
+    <div class="main-container w-full">
+
+        <!-- Home Page -->
+        <div id="home-page" class="page active p-8 sm:p-12">
+            <div class="text-center mb-10">
+                <h1 class="text-2xl font-bold tracking-wider text-gray-700">SEMESTER - 4</h1>
+                <h2 class="text-xl text-gray-600 mt-2">ALTERNATIVE ENGLISH</h2>
+                <p class="text-sm text-gray-500 mt-1">(2 Credits - Th 2, Tu 0)</p>
+            </div>
+
+            <div class="space-y-10">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800 border-b-2 border-gray-200 pb-2 mb-4">UNIT 1: POETRY</h3>
+                    <ul class="space-y-3 pl-4">
+                        <li><a class="home-link" data-target="gitanjali-start-page">RABINDRANATH TAGORE: GITANJALI: XLV</a></li>
+                        <li><a class="home-link" data-target="deshpande-start-page">GAURI DESHPANDE: THE FEMALE OF THE SPECIES</a></li>
+                        <li><a class="home-link" data-target="ezekiel-start-page">NISSIM EZEKIEL: IN A COUNTRY COTTAGE</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800 border-b-2 border-gray-200 pb-2 mb-4">UNIT 2: PROSE</h3>
+                    <ul class="space-y-3 pl-4">
+                        <li><a class="home-link" data-target="hemingway-start-page">ERNEST HEMINGWAY: A DAY'S WAIT</a></li>
+                        <li><a class="home-link" data-target="wells-start-page">H.G. WELLS: THE STOLEN BACILLUS</a></li>
+                        <li><a class="home-link" data-target="radhakrishnan-start-page">S. RADHAKRISHNAN: INTUITION AND GENIUS</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h3 class="text-lg font-bold text-gray-800 border-b-2 border-gray-200 pb-2 mb-4">BONUS</h3>
+                    <ul class="space-y-3 pl-4">
+                       <li><a class="home-link" data-target="suggestions-start-page">P.B. Sir Suggestions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- All Quiz Content Pages (initially hidden) -->
+        <div id="quiz-content-wrapper">
+            <!-- Gitanjali 45 Start Page -->
+            <div id="gitanjali-start-page" class="page p-8 sm:p-12 relative">
+                 <div data-target="home-page" class="close-btn absolute top-6 right-6 h-10 w-10 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                 </div>
+                 <h1 class="text-3xl font-bold text-center mb-4">Gitanjali 45</h1>
+                 <h2 class="text-xl text-center text-gray-600 mb-8">by Rabindranath Tagore</h2>
+                 <div class="max-w-2xl mx-auto space-y-4 text-lg leading-relaxed">
+                    <p>Have you not heard his silent steps? He comes, comes, ever comes...</p>
+                 </div>
+                 <div class="text-center mt-10">
+                    <button class="btn start-quiz-btn px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg" data-quiz="gitanjali">Start Quiz</button>
+                 </div>
+            </div>
+
+            <!-- The Female of the Species Start Page -->
+            <div id="deshpande-start-page" class="page p-8 sm:p-12 relative">
+                 <div data-target="home-page" class="close-btn absolute top-6 right-6 h-10 w-10 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                 </div>
+                 <h1 class="text-3xl font-bold text-center mb-4">The Female of the Species</h1>
+                 <h2 class="text-xl text-center text-gray-600 mb-8">by Gauri Deshpande</h2>
+                 <div class="max-w-2xl mx-auto space-y-4 text-base leading-relaxed">
+                    <p>Sometimes you want to talk about love and despair...</p>
+                 </div>
+                 <div class="text-center mt-10">
+                    <button class="btn start-quiz-btn px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg" data-quiz="deshpande">Start Quiz</button>
+                 </div>
+            </div>
+            
+            <!-- In a Country Cottage Start Page -->
+            <div id="ezekiel-start-page" class="page p-8 sm:p-12 relative">
+                 <div data-target="home-page" class="close-btn absolute top-6 right-6 h-10 w-10 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                 </div>
+                 <h1 class="text-3xl font-bold text-center mb-4">In A Country Cottage</h1>
+                 <h2 class="text-xl text-center text-gray-600 mb-8">by Nissim Ezekiel</h2>
+                 <div class="max-w-2xl mx-auto space-y-4 text-base leading-relaxed">
+                    <p>We left the city sounds behind, for a lonely country cottage...</p>
+                 </div>
+                 <div class="text-center mt-10">
+                    <button class="btn start-quiz-btn px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg" data-quiz="ezekiel">Start Quiz</button>
+                 </div>
+            </div>
+
+            <!-- A Day's Wait Start Page -->
+            <div id="hemingway-start-page" class="page p-8 sm:p-12 relative">
+                 <div data-target="home-page" class="close-btn absolute top-6 right-6 h-10 w-10 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                 </div>
+                 <h1 class="text-3xl font-bold text-center mb-4">A Day's Wait</h1>
+                 <h2 class="text-xl text-center text-gray-600 mb-8">by Ernest Hemingway</h2>
+                 <div class="max-w-2xl mx-auto space-y-4 text-base leading-relaxed">
+                    <p>In this short story, a nine-year-old boy named Schatz comes down with influenza...</p>
+                 </div>
+                 <div class="text-center mt-10">
+                    <button class="btn start-quiz-btn px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg" data-quiz="hemingway">Start Quiz</button>
+                 </div>
+            </div>
+            
+            <!-- The Stolen Bacillus Start Page -->
+            <div id="wells-start-page" class="page p-8 sm:p-12 relative">
+                 <div data-target="home-page" class="close-btn absolute top-6 right-6 h-10 w-10 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                 </div>
+                 <h1 class="text-3xl font-bold text-center mb-4">The Stolen Bacillus</h1>
+                 <h2 class="text-xl text-center text-gray-600 mb-8">by H.G. Wells</h2>
+                 <div class="max-w-2xl mx-auto space-y-4 text-base leading-relaxed">
+                    <p>The story follows a scientist, known only as the Bacteriologist, who proudly shows a visitor a vial containing a live bacillus...</p>
+                 </div>
+                 <div class="text-center mt-10">
+                    <button class="btn start-quiz-btn px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg" data-quiz="wells">Start Quiz</button>
+                 </div>
+            </div>
+
+            <!-- Intuition and Genius Start Page -->
+            <div id="radhakrishnan-start-page" class="page p-8 sm:p-12 relative">
+                 <div data-target="home-page" class="close-btn absolute top-6 right-6 h-10 w-10 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                 </div>
+                 <h1 class="text-3xl font-bold text-center mb-4">Intuition and Genius</h1>
+                 <h2 class="text-xl text-center text-gray-600 mb-8">by S. Radhakrishnan</h2>
+                 <div class="max-w-2xl mx-auto space-y-4 text-base leading-relaxed">
+                    <p>This essay explores the nature of genius and argues that great discoveries... are the result of intuition and creative insight...</p>
+                 </div>
+                 <div class="text-center mt-10">
+                    <button class="btn start-quiz-btn px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg" data-quiz="radhakrishnan">Start Quiz</button>
+                 </div>
+            </div>
+            
+            <!-- P.B. Sir Suggestions Start Page -->
+            <div id="suggestions-start-page" class="page p-8 sm:p-12 relative">
+                 <div data-target="home-page" class="close-btn absolute top-6 right-6 h-10 w-10 bg-gray-700 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                 </div>
+                 <h1 class="text-3xl font-bold text-center mb-6">P.B. Sir Suggestions</h1>
+                 <div class="max-w-3xl mx-auto space-y-6 text-gray-700">
+                    <p class="text-center text-lg">This is a comprehensive quiz with 50 questions based on the corrected material from your PDF, covering all the authors and texts from the syllabus.</p>
+                 </div>
+                 <div class="text-center mt-10">
+                    <button class="btn start-quiz-btn px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg" data-quiz="suggestions">Start Quiz</button>
+                 </div>
+            </div>
+
+            <!-- Universal Quiz Page -->
+            <div id="quiz-page" class="page p-6 sm:p-10">
+                <div id="question-container" class="mb-8">
+                    <p id="question-number" class="text-blue-600 font-semibold mb-2"></p>
+                    <h2 id="question-text" class="text-2xl font-bold text-gray-800"></h2>
+                </div>
+                <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                <div class="mt-8 flex justify-between items-center">
+                    <button id="cancel-btn" class="btn px-8 py-3 bg-red-600 text-white font-semibold rounded-lg">Cancel</button>
+                    <button id="next-btn" class="btn hidden px-8 py-3 bg-gray-800 text-white font-semibold rounded-lg">Next</button>
+                </div>
+            </div>
+
+            <!-- Universal Result Page -->
+            <div id="result-page" class="page p-6 sm:p-10">
+                 <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 text-center">Quiz Completed!</h2>
+                 <p class="text-xl text-gray-600 mb-8 text-center">You got <span id="score" class="font-bold text-blue-600"></span> out of <span id="total-questions" class="font-bold"></span> correct.</p>
+                 <div id="correct-answers-summary" class="text-left max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-700 mb-6 border-b pb-2">Review Your Answers:</h3>
+                    <div id="summary-list" class="space-y-4 max-h-96 overflow-y-auto pr-4"></div>
+                 </div>
+                 <div class="mt-8 text-center">
+                    <button id="go-back-btn" class="btn px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg">GO BACK</button>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    const quizzes = {
+        gitanjali: [
+            { question: "According to the poem, how does 'He' come?", options: ["Loudly and with announcement", "Silently and without warning", "Only on special occasions", "Once in a lifetime"], answer: "Silently and without warning" },
+            { question: "What is the recurring phrase throughout the first few stanzas of the poem?", options: ["'He is always here'", "'He comes, comes, ever comes'", "'Listen to his voice'", "'My heart waits for him'"], answer: "'He comes, comes, ever comes'" },
+            { question: "What has the speaker's songs always proclaimed?", options: ["His own sorrow", "The beauty of nature", "The coming of 'He'", "The changing of seasons"], answer: "The coming of 'He'" },
+            { question: "In which month are the days described as 'fragrant' and 'sunny'?", options: ["May", "June", "April", "March"], answer: "April" },
+            { question: "How does 'He' come in the 'rainy gloom of July nights'?", options: ["On a gentle breeze", "Walking on the water", "On the thundering chariot of clouds", "With the morning sun"], answer: "On the thundering chariot of clouds" },
+            { question: "The phrase 'forest path' is associated with which season?", options: ["Winter", "Autumn", "Monsoon", "Spring/Summer (April)"], answer: "Spring/Summer (April)" },
+            { question: "What does the speaker feel in times of 'sorrow after sorrow'?", options: ["Abandonment", "His steps pressing on the heart", "Anger", "Confusion"], answer: "His steps pressing on the heart" },
+            { question: "What makes the speaker's joy 'shine'?", options: ["The memory of past happiness", "The songs he sings", "The golden touch of his feet", "The beauty of a sunny day"], answer: "The golden touch of his feet" },
+            { question: "The poem suggests that the coming of 'He' is...", options: ["A rare event", "A seasonal event", "A constant and perpetual event", "An event only for the faithful"], answer: "A constant and perpetual event" },
+            { question: "The 'thundering chariot of clouds' is an image of what?", options: ["Peace and tranquility", "Power and majesty", "Fear and destruction", "Slow and steady arrival"], answer: "Power and majesty" },
+            { question: "The poem contrasts which two experiences of 'His' arrival?", options: ["Day and night", "Rich and poor", "Sunny April days and rainy July nights", "Youth and old age"], answer: "Sunny April days and rainy July nights" },
+            { question: "The 'silent steps' in the first line implies a presence that is...", options: ["Aggressive and loud", "Subtle and often unnoticed", "Visible to everyone", "Frightening"], answer: "Subtle and often unnoticed" },
+            { question: "What is the primary mood of the speaker's songs?", options: ["They are all sad songs", "They are all happy songs", "They are of many moods", "They are all songs of nature"], answer: "They are of many moods" },
+            { question: "The 'golden touch of his feet' is a metaphor for what?", options: ["Wealth and riches", "A divine, joy-giving influence", "The warmth of the sun", "Physical healing"], answer: "A divine, joy-giving influence" },
+            { question: "The poem emphasizes the presence of 'He' in both...", options: ["Joy and sorrow", "Light and darkness", "Life and death", "All of the above"], answer: "Joy and sorrow" },
+            { question: "The repetition of 'comes, comes, ever comes' serves to emphasize...", options: ["The speaker's impatience", "The certainty and continuity of the arrival", "The slowness of the arrival", "The speaker's fear"], answer: "The certainty and continuity of the arrival" },
+            { question: "What does the poem suggest about the nature of the divine presence?", options: ["It is distant and uncaring", "It is found only in temples", "It is intimately involved in all aspects of life", "It is a punishing force"], answer: "It is intimately involved in all aspects of life" },
+            { question: "The 'fragrant days of sunny April' represent a time of...", options: ["Hardship", "Pleasure and beauty", "Storms", "Solitude"], answer: "Pleasure and beauty" },
+            { question: "The 'rainy gloom of July' represents a time of...", options: ["Celebration", "Somberness and power", "Growth", "Peace"], answer: "Somberness and power" },
+            { question: "The speaker's heart is directly affected during times of...", options: ["Joy", "Celebration", "Sorrow", "Singing"], answer: "Sorrow" },
+            { question: "The poem shifts from describing 'His' coming in nature to describing it in...", options: ["The speaker's mind", "The speaker's personal emotions (sorrow and joy)", "The city", "The afterlife"], answer: "The speaker's personal emotions (sorrow and joy)" },
+            { question: "The 'notes' of the speaker's songs are unified by what single message?", options: ["A cry for help", "A celebration of self", "The proclamation that 'He comes'", "A description of the world"], answer: "The proclamation that 'He comes'" },
+            { question: "The overall tone of the poem can be described as...", options: ["Despairing and hopeless", "Devotional and aware", "Angry and resentful", "Sarcastic and cynical"], answer: "Devotional and aware" },
+            { question: "The final line connects the 'golden touch' to what emotion?", options: ["Sorrow", "Fear", "Joy", "Peace"], answer: "Joy" },
+            { question: "The poem suggests that one can perceive 'Him' through...", options: ["Intellectual study only", "Every moment and every experience", "Ignoring the world", "Following strict rituals"], answer: "Every moment and every experience" }
+        ],
+        deshpande: [
+            { question: "What are the three main topics the speaker wants to talk about?", options: ["Work, money, and politics", "Love, despair, and the ungratefulness of children", "Weather, sports, and movies", "Friendship, travel, and food"], answer: "Love, despair, and the ungratefulness of children" },
+            { question: "According to the speaker, who is 'no use whatever' for this kind of conversation?", options: ["A stranger", "A child", "A man", "A teacher"], answer: "A man" },
+            { question: "Which of these people is NOT on the speaker's list of desired confidantes?", options: ["Her mother", "Her sister", "Her boss", "The girl she went to school with"], answer: "Her boss" },
+            { question: "The poem suggests that the bond between women is based on what?", options: ["Shared hobbies", "Shared secrets and experiences", "Shared social status", "Shared goals"], answer: "Shared secrets and experiences" },
+            { question: "What has the other woman gone through, according to the poem?", options: ["A different life entirely", "The same secret turmoil", "An easy and happy life", "A life of fame and fortune"], answer: "The same secret turmoil" },
+            { question: "The poem mentions 'reasonless happiness' and what other similar feeling?", options: ["Loud laughter", "Quiet contentment", "Dull despair", "Fierce anger"], answer: "Dull despair" },
+            { question: "What will the other woman understand, besides the speaker's words?", options: ["The future", "The hidden meaning", "The pauses", "The financial situation"], answer: "The pauses" },
+            { question: "The poem's central theme is best described as:", options: ["Romantic love", "The difficulty of parenting", "Female solidarity", "The generation gap"], answer: "Female solidarity" },
+            { question: "The structure of the poem is circular. What does this emphasize?", options: ["The repetitive nature of life", "The importance of the central message", "The speaker's confusion", "The passage of time"], answer: "The importance of the central message" },
+            { question: "The phrase 'secret turmoil' suggests experiences that are:", options: ["Publicly known", "Trivial and unimportant", "Deeply personal and not easily shared", "Fictional"], answer: "Deeply personal and not easily shared" },
+            { question: "What does the ability to understand 'the pauses' signify?", options: ["A sharp intellect", "A deep, empathetic connection beyond words", "A good memory", "A patient listener"], answer: "A deep, empathetic connection beyond words" },
+            { question: "The poem contrasts the deep understanding between women with...", options: ["The silence of nature", "The bond between brothers", "The perceived inability of men to connect on that level", "The innocence of children"], answer: "The perceived inability of men to connect on that level" },
+            { question: "The list of desired people to talk to (mother, sister, friend) represents:", options: ["A support network across a lifetime", "A list of people to invite to a party", "People the speaker has lost", "People who owe the speaker a favor"], answer: "A support network across a lifetime" },
+            { question: "The tone of the poem can be described as:", options: ["Angry and aggressive", "Lighthearted and silly", "Introspective and quietly affirming", "Loud and celebratory"], answer: "Introspective and quietly affirming" },
+            { question: "The mention of a 'first child - a girl' reinforces the theme of:", options: ["Childhood innocence", "The challenges of a first-born", "Female lineage and continuity of experience", "The preference for daughters"], answer: "Female lineage and continuity of experience" },
+            { question: "Unlike Kipling's poem of the same name, Deshpande's poem defines 'The Female of the Species' by her:", options: ["Physical strength", "Emotional depth and capacity for empathy", "Superiority to men", "Ruthlessness"], answer: "Emotional depth and capacity for empathy" },
+            { question: "The line 'A man is no use whatever then' is an example of:", options: ["A hesitant suggestion", "A direct and absolute statement", "A sarcastic joke", "A question"], answer: "A direct and absolute statement" },
+            { question: "What does the poem imply is necessary for true understanding?", options: ["A formal education", "A long and detailed explanation", "Shared life experience", "A promise of secrecy"], answer: "Shared life experience" },
+            { question: "The 'ungratefulness of children' is presented as:", options: ["A unique problem only the speaker faces", "A shared, understood aspect of motherhood", "A reason to be angry", "A trivial complaint"], answer: "A shared, understood aspect of motherhood" },
+            { question: "The final stanza repeats the first. Why?", options: ["To create a rhyming pattern", "To show the speaker has changed her mind", "To bring the poem to a strong, conclusive point", "To fill up space"], answer: "To bring the poem to a strong, conclusive point" },
+            { question: "The poem values which kind of communication most highly?", options: ["Written letters", "Loud arguments", "Formal speeches", "Quiet, empathetic conversation"], answer: "Quiet, empathetic conversation" },
+            { question: "The word 'turmoil' suggests a state of:", options: ["Perfect peace", "Great disturbance and confusion", "Mild annoyance", "Boredom"], answer: "Great disturbance and confusion" },
+            { question: "The poem is written from what point of view?", options: ["A man observing women", "A third-person narrator", "A woman's personal perspective ('you')", "A child watching their mother"], answer: "A woman's personal perspective ('you')" },
+            { question: "The 'dull despair' mentioned in the poem is likely a feeling that is:", options: ["Sharp and sudden", "Exciting and dramatic", "Chronic and low-grade", "Easily fixed"], answer: "Chronic and low-grade" },
+            { question: "Ultimately, the speaker's desire is for:", options: ["Advice and solutions", "Someone to blame", "Validation and shared understanding", "Financial help"], answer: "Validation and shared understanding" }
+        ],
+        ezekiel: [
+            { question: "What did the speaker and their companion leave behind?", options: ["Their friends", "Their jobs", "The city sounds", "Their family"], answer: "The city sounds" },
+            { question: "The country cottage is described as a 'point of view' and what else?", options: ["A new beginning", "A state of mind", "A temporary escape", "A financial investment"], answer: "A state of mind" },
+            { question: "The cottage represents a 'way of being' that is not dependent on what?", options: ["Wealth", "Love", "Age", "Society"], answer: "Age" },
+            { question: "How is the landscape around the cottage described?", options: ["Lush and green", "Crowded and busy", "Still and almost nude", "Dark and foreboding"], answer: "Still and almost nude" },
+            { question: "According to the speaker, the landscape was 'not for love' in what sense?", options: ["It was too ugly for romance", "It was not suited for the 'city attitude'", "It was a place for solitude only", "It was forbidden to them"], answer: "It was not suited for the 'city attitude'" },
+            { question: "What is the 'city attitude' mentioned in the poem?", options: ["A love for nature", "A desire for community", "Taking a woman for a mate", "A focus on work and career"], answer: "Taking a woman for a mate" },
+            { question: "In the cottage, the speaker says they 'had to be what we were'. What does this imply?", options: ["They were forced to act a certain way", "They had to shed their city personas and be authentic", "They were unhappy with their true selves", "They were trying to impress each other"], answer: "They had to shed their city personas and be authentic" },
+            { question: "Which of the following is NOT listed as part of their authentic selves in the third stanza?", options: ["The man, the woman", "The flower, the bird", "The river, the mountain", "The beast, the earth, the sky"], answer: "The river, the mountain" },
+            { question: "The list 'the man, the woman, and the flower...' suggests a connection to what?", options: ["Their past memories", "The fundamental elements of nature", "Their future plans", "The books they read"], answer: "The fundamental elements of nature" },
+            { question: "When did the speaker and their companion realize the true nature of their experience?", options: ["Immediately upon arrival", "After a few weeks", "They did not know it at the start", "Before they even left the city"], answer: "They did not know it at the start" },
+            { question: "What were they 'still in search of' at the beginning?", options: ["A better cottage", "Financial security", "It (the deeper experience)", "Directions to the nearest town"], answer: "It (the deeper experience)" },
+            { question: "The experience is described as a 'song of the...' what?", options: ["Joyful soul", "Lonely traveler", "Divided heart", "Natural world"], answer: "Divided heart" },
+            { question: "What does the phrase 'divided heart' suggest?", options: ["A romantic breakup", "A conflict between their city and natural selves", "A disagreement between the two people", "A feeling of confusion"], answer: "A conflict between their city and natural selves" },
+            { question: "The poem concludes that they became 'a part' of what?", options: ["A new community", "Each other's lives", "A world (the natural world)", "A forgotten history"], answer: "A world (the natural world)" },
+            { question: "The overall tone of the poem is best described as:", options: ["Joyful and celebratory", "Angry and resentful", "Reflective and philosophical", "Sad and regretful"], answer: "Reflective and philosophical" },
+            { question: "The journey to the cottage is both physical and...", options: ["Expensive", "Pointless", "Psychological/Spiritual", "Quick"], answer: "Psychological/Spiritual" },
+            { question: "The poem contrasts the city with what?", options: ["The suburbs", "A foreign country", "The country/nature", "The past"], answer: "The country/nature" },
+            { question: "The term 'almost nude' for the landscape suggests a quality of:", options: ["Emptiness and poverty", "Bareness and honesty", "Coldness and unfriendliness", "Shame and exposure"], answer: "Bareness and honesty" },
+            { question: "The line 'and not another, you and I' emphasizes the need for:", options: ["Privacy", "Authenticity", "New friends", "A change in appearance"], answer: "Authenticity" },
+            { question: "The poem suggests that in the city, relationships can be:", options: ["More authentic", "Based on superficial attitudes", "More spiritual", "Non-existent"], answer: "Based on superficial attitudes" },
+            { question: "What does the 'flower' likely symbolize in the third stanza?", options: ["A gift", "A specific memory", "The natural, simple beauty of being", "A scientific specimen"], answer: "The natural, simple beauty of being" },
+            { question: "The final stanza implies that the understanding they reached was a result of:", options: ["A sudden revelation", "A gradual process of discovery", "A long discussion", "Reading a book"], answer: "A gradual process of discovery" },
+            { question: "The poem is structured in:", options: ["One long stanza", "Couplets", "Four quatrains (four-line stanzas)", "A sonnet form"], answer: "Four quatrains (four-line stanzas)" },
+            { question: "The central idea of the poem is about finding one's true self by:", options: ["Achieving career success", "Leaving behind artificial environments", "Ending a relationship", "Traveling the world"], answer: "Leaving behind artificial environments" },
+            { question: "The 'world' they become a part of is defined by:", options: ["Social rules and expectations", "Natural elements like birds, beasts, and the earth", "The local village culture", "The architecture of the cottage"], answer: "Natural elements like birds, beasts, and the earth" }
+        ],
+        hemingway: [
+            { question: "What is the name of the boy in the story?", options: ["Robert", "David", "Schatz", "John"], answer: "Schatz" },
+            { question: "What illness does the doctor diagnose Schatz with?", options: ["Pneumonia", "A common cold", "Influenza", "Bronchitis"], answer: "Influenza" },
+            { question: "What was the boy's temperature in Fahrenheit?", options: ["98.6 degrees", "100 degrees", "102 degrees", "104 degrees"], answer: "102 degrees" },
+            { question: "Why does Schatz believe he is going to die?", options: ["The doctor told him he was very sick", "He overheard his parents talking", "He confused Fahrenheit with Celsius", "He read it in a book"], answer: "He confused Fahrenheit with Celsius" },
+            { question: "In France, what temperature had Schatz been told was fatal?", options: ["100 degrees", "44 degrees", "37 degrees", "50 degrees"], answer: "44 degrees" },
+            { question: "What does Schatz's father do while the boy is resting in bed?", options: ["He reads a book by the fire", "He goes hunting with his dog", "He calls the doctor again", "He cooks a meal for the family"], answer: "He goes hunting with his dog" },
+            { question: "How does Schatz's behavior change after the doctor leaves?", options: ["He becomes very talkative", "He cries constantly", "He seems detached and holds tight onto himself", "He asks for food and water"], answer: "He seems detached and holds tight onto himself" },
+            { question: "What does Schatz refuse to let anyone do?", options: ["Read him a story", "Give him medicine", "Come into his room", "Change his sheets"], answer: "Come into his room" },
+            { question: "When does Schatz finally reveal his fear to his father?", options: ["Immediately after the doctor leaves", "In the middle of the night", "Late in the afternoon after his father returns", "The next morning"], answer: "Late in the afternoon after his father returns" },
+            { question: "How does the father explain the difference in temperatures to Schatz?", options: ["He shows him a thermometer", "He draws a diagram", "He explains it's 'like miles and kilometers'", "He tells him not to worry about it"], answer: "He explains it's 'like miles and kilometers'" },
+            { question: "What is Schatz's reaction after his father explains the misunderstanding?", options: ["He starts crying with relief", "He doesn't believe his father", "He relaxes his grip, and is very tired the next day", "He falls asleep immediately"], answer: "He relaxes his grip, and is very tired the next day" },
+            { question: "The story's central theme is primarily about:", options: ["The dangers of hunting", "The bond between a boy and his dog", "The consequences of miscommunication", "The failure of modern medicine"], answer: "The consequences of miscommunication" },
+            { question: "What does the father's hunting trip symbolize?", options: ["His neglect of his son", "His love for the outdoors", "The normal flow of life continuing outside the sickroom", "His need to escape the situation"], answer: "The normal flow of life continuing outside the sickroom" },
+            { question: "Schatz's behavior throughout the day can be best described as:", options: ["Angry and resentful", "Stoic and brave", "Whiny and complaining", "Curious and inquisitive"], answer: "Stoic and brave" },
+            { question: "The setting of the story, with the frozen ground and sleet, reflects what?", options: ["A happy family life", "The boy's internal state of fear and isolation", "A typical winter day", "The father's mood"], answer: "The boy's internal state of fear and isolation" },
+            { question: "What is the dog's name?", options: ["Rex", "Buddy", "The story does not name the dog", "Spot"], answer: "The story does not name the dog" },
+            { question: "The father reads a book to Schatz. What is the book about?", options: ["Pirates", "Animals", "Howard Pyle's 'Book of Pirates'", "Knights and castles"], answer: "Howard Pyle's 'Book of Pirates'" },
+            { question: "How does Schatz react to the story his father reads?", options: ["He is very interested", "He falls asleep", "He doesn't pay attention", "He asks many questions"], answer: "He doesn't pay attention" },
+            { question: "The story highlights the difference between a child's perspective and an adult's by showing:", options: ["The father's impatience vs. the son's patience", "The father's ignorance vs. the son's knowledge", "The father's assumption vs. the son's literal interpretation", "The father's fear vs. the son's calmness"], answer: "The father's assumption vs. the son's literal interpretation" },
+            { question: "What does Schatz ask his father about 'dying'?", options: ["If it will hurt", "If he has to do it right away", "If he will go to heaven", "He doesn't ask any questions about it"], answer: "If he has to do it right away" },
+            { question: "The fact that Schatz 'cried very easily at little things' the next day shows:", options: ["He was still sick", "The emotional toll his 'day's wait' had taken", "He was angry at his father", "He was disappointed he didn't die"], answer: "The emotional toll his 'day's wait' had taken" },
+            { question: "What kind of birds did the father and the dog hunt?", options: ["Ducks", "Geese", "Quail", "Pheasants"], answer: "Quail" },
+            { question: "The father's initial reaction to Schatz's behavior is one of:", options: ["Anger", "Annoyance", "Slight concern, but not alarm", "Immediate panic"], answer: "Slight concern, but not alarm" },
+            { question: "The title 'A Day's Wait' refers to:", options: ["Waiting for the doctor to arrive", "Waiting for the fever to break", "Schatz waiting for what he believes is his impending death", "The father waiting for his son to get better"], answer: "Schatz waiting for what he believes is his impending death" },
+            { question: "What is the primary source of conflict in the story?", options: ["Man vs. Nature", "Man vs. Society", "Man vs. Self (internal conflict)", "Man vs. Man"], answer: "Man vs. Self (internal conflict)" }
+        ],
+        wells: [
+            { question: "What is the profession of the main character who hosts the visitor?", options: ["A chemist", "A doctor", "A bacteriologist", "A physicist"], answer: "A bacteriologist" },
+            { question: "What does the Bacteriologist initially show his visitor?", options: ["A new microscope", "A tube of glowing bacteria", "A vial of Asiatic cholera", "A collection of rare insects"], answer: "A vial of Asiatic cholera" },
+            { question: "What does the visitor reveal himself to be?", options: ["A rival scientist", "A government inspector", "A journalist", "An Anarchist"], answer: "An Anarchist" },
+            { question: "What does the Anarchist do with the vial?", options: ["He drops it on the floor", "He steals it and runs away", "He asks for a sample to study", "He accuses the scientist of being irresponsible"], answer: "He steals it and runs away" },
+            { question: "How does the Anarchist escape the laboratory?", options: ["He breaks a window", "He pushes the scientist aside and runs out the door", "He has a getaway car waiting", "He distracts the scientist's wife"], answer: "He pushes the scientist aside and runs out the door" },
+            { question: "Who is the first person the Bacteriologist encounters after the Anarchist flees?", options: ["A policeman", "His wife, Minnie", "A cabman", "A group of children"], answer: "His wife, Minnie" },
+            { question: "What is the Bacteriologist's primary concern after the vial is stolen?", options: ["The loss of his research", "The potential contamination of London's water supply", "His professional reputation", "The cost of the stolen material"], answer: "The potential contamination of London's water supply" },
+            { question: "How does the Bacteriologist pursue the Anarchist?", options: ["On foot", "He calls the police", "He hires a cab", "He follows him on a bicycle"], answer: "He hires a cab" },
+            { question: "What does the Anarchist do with the vial while in the cab?", options: ["He hides it in his pocket", "He breaks it open and swallows the contents", "He throws it out the window", "He examines it under a light"], answer: "He breaks it open and swallows the contents" },
+            { question: "Why does the Anarchist swallow the contents?", options: ["To hide the evidence", "He believes it will make him a living plague carrier", "He thinks it's a powerful stimulant", "It was an accident"], answer: "He believes it will make him a living plague carrier" },
+            { question: "What is the Anarchist's ultimate goal?", options: ["To become famous", "To get revenge on the Bacteriologist", "To cause mass chaos and death in London", "To sell the bacillus to a foreign power"], answer: "To cause mass chaos and death in London" },
+            { question: "The chase involves several cabs. What is the number of the Anarchist's cab?", options: ["2715", "16", "The story does not specify", "1729"], answer: "1729" },
+            { question: "After swallowing the bacillus, what does the Anarchist intend to do?", options: ["Go to the Houses of Parliament", "Run through the streets shaking hands with people", "Go to the nearest hospital", "Flee the country"], answer: "Run through the streets shaking hands with people" },
+            { question: "What is the major twist at the end of the story?", options: ["The Anarchist was immune to cholera", "The Bacteriologist had filled the vial with water", "The vial contained a new, harmless species of bacteria", "The Anarchist was the Bacteriologist's brother"], answer: "The vial contained a new, harmless species of bacteria" },
+            { question: "What does the Bacteriologist say the stolen bacillus actually does?", options: ["It turns the skin of animals blue", "It is a cure for the common cold", "It is completely inert", "It glows in the dark"], answer: "It turns the skin of animals blue" },
+            { question: "The Bacteriologist refers to the stolen microbe as what?", options: ["Bacillus anthracis", "Bacillus cholerae", "Bacillus liquidus", "Bacillus cæruleus"], answer: "Bacillus cæruleus" },
+            { question: "What is the Bacteriologist's wife, Minnie, primarily concerned with during the chase?", options: ["The safety of London's citizens", "That her husband left without his hat and overcoat", "The police catching the thief", "The scientific implications"], answer: "That her husband left without his hat and overcoat" },
+            { question: "The story satirizes the Bacteriologist's...", options: ["Lack of intelligence", "Poor laboratory skills", "Enthusiasm and lack of foresight", "Unhappy marriage"], answer: "Enthusiasm and lack of foresight" },
+            { question: "What is the final emotion of the Bacteriologist at the end of the story?", options: ["Terror", "Anger", "Relief and amusement", "Sadness"], answer: "Relief and amusement" },
+            { question: "The Anarchist is described physically as:", options: ["Tall and muscular", "A pale, thin man with dark eyes", "A short, stout man with a red beard", "An average-looking man"], answer: "A pale, thin man with dark eyes" },
+            { question: "The story highlights a conflict between:", options: ["Science and religion", "Scientific naivety and political extremism", "Husband and wife", "The rich and the poor"], answer: "Scientific naivety and political extremism" },
+            { question: "What does Minnie's character represent?", options: ["Scientific curiosity", "The voice of reason", "The mundane, everyday concerns of domestic life", "Political activism"], answer: "The mundane, everyday concerns of domestic life" },
+            { question: "The Bacteriologist's initial pride in his dangerous work is an example of what literary device?", options: ["Metaphor", "Irony", "Simile", "Personification"], answer: "Irony" },
+            { question: "The chase through London adds an element of what to the story?", options: ["Romance", "Farce and slapstick comedy", "Deep philosophical debate", "Tragedy"], answer: "Farce and slapstick comedy" },
+            { question: "What is the Bacteriologist's final thought about the Anarchist?", options: ["He hopes the police catch him", "He worries the Anarchist will be sick", "He is amused by the thought of the Anarchist turning blue", "He feels guilty for what happened"], answer: "He is amused by the thought of the Anarchist turning blue" }
+        ],
+        radhakrishnan: [
+            { question: "What is the central argument of Radhakrishnan's 'Intuition and Genius'?", options: ["Genius is purely a result of hard work and logic.", "Great discoveries stem from intuitive insight, not just intellect.", "Intuition is a form of guessing and is unreliable.", "Only artists, not scientists, use intuition."], answer: "Great discoveries stem from intuitive insight, not just intellect." },
+            { question: "How does Radhakrishnan differentiate between intellect and intuition?", options: ["They are the same thing.", "Intellect analyzes parts; intuition grasps the whole.", "Intellect is for philosophy; intuition is for science.", "Intellect is emotional; intuition is logical."], answer: "Intellect analyzes parts; intuition grasps the whole." },
+            { question: "According to the essay, what is the role of logic in the process of discovery?", options: ["It is the initial spark of an idea.", "It is useless for a true genius.", "It verifies and structures the insights gained through intuition.", "It prevents creative thinking."], answer: "It verifies and structures the insights gained through intuition." },
+            { question: "The 'spark that lights the fire' of discovery is described as:", options: ["Discipline", "Experience", "Logic", "Genius"], answer: "Genius" },
+            { question: "What ancient Greek figure is used as a prime example of intuitive discovery?", options: ["Plato", "Socrates", "Archimedes", "Aristotle"], answer: "Archimedes" },
+            { question: "The story of Archimedes involves his discovery related to a:", options: ["Lever", "Planet", "Mathematical theorem", "King's crown"], answer: "King's crown" },
+            { question: "What does the term 'darsana' in Indian philosophy mean, according to the text?", options: ["A logical argument", "A scientific experiment", "A direct insight into reality", "A historical text"], answer: "A direct insight into reality" },
+            { question: "Radhakrishnan argues that philosophy should be an 'insight into the whole experience', not just:", options: ["A spiritual practice", "A system of logic", "An artistic expression", "A historical study"], answer: "A system of logic" },
+            { question: "What does Radhakrishnan believe about the relationship between intuition and intellect?", options: ["They are in opposition to each other.", "Intuition is a higher form of intellect that works as a whole.", "Intellect is superior to intuition.", "They are unrelated faculties."], answer: "Intuition is a higher form of intellect that works as a whole." },
+            { question: "The 'art of discovery' is described as an 'adventure of the...'", options: ["Body", "Heart", "Mind", "Soul"], answer: "Mind" },
+            { question: "What is required for the 'vision' of intuition to occur?", options: ["Complete relaxation", "Intense concentration and preparation", "A disregard for facts", "A group discussion"], answer: "Intense concentration and preparation" },
+            { question: "The essay suggests that a genius possesses:", options: ["Only a powerful intellect", "Only a strong intuition", "Both a powerful intellect and a strong intuition", "Neither intellect nor intuition"], answer: "Both a powerful intellect and a strong intuition" },
+            { question: "What must imagination be guided by to be effective?", options: ["Emotion", "Logic", "Popular opinion", "Random chance"], answer: "Logic" },
+            { question: "The process of discovery is compared to:", options: ["Building a house brick by brick", "A flash of lightning illuminating a landscape", "Solving a mathematical equation", "Following a map"], answer: "A flash of lightning illuminating a landscape" },
+            { question: "What does 'intellectual passivity' mean in the context of the essay?", options: ["Mental laziness", "Refusing to learn new things", "Allowing the subconscious to work after intense preparation", "Ignoring logical proofs"], answer: "Allowing the subconscious to work after intense preparation" },
+            { question: "Which philosopher is cited for his views on 'creative evolution'?", options: ["Kant", "Spinoza", "Bergson", "Descartes"], answer: "Bergson" },
+            { question: "Radhakrishnan believes that a true philosopher must also be a:", options: ["Scientist", "Mathematician", "Seer", "Politician"], answer: "Seer" },
+            { question: "Intuitive truths, once discovered, must be presented in what form?", options: ["A poetic form", "A secret code", "A logical form", "A visual diagram"], answer: "A logical form" },
+            { question: "The essay argues that intuition is not 'opposed to' but 'above' what?", options: ["Emotion", "Instinct", "Intellect", "Experience"], answer: "Intellect" },
+            { question: "What is the final step after an intuitive idea is grasped?", options: ["Publication", "Verification", "Celebration", "Forgetting it"], answer: "Verification" },
+            { question: "The essay implies that genius is:", options: ["Common to everyone", "A rare combination of faculties", "A result of good education", "A supernatural gift"], answer: "A rare combination of faculties" },
+            { question: "According to the text, philosophy must not only be intellectual but also:", options: ["Mathematical", "Abstract", "Experiential", "Mythical"], answer: "Experiential" },
+            { question: "The 'sudden illumination' of intuition comes after a period of:", options: ["Rest and vacation", "Doubt and questioning", "Conscious and strenuous effort", "Ignoring the problem"], answer: "Conscious and strenuous effort" },
+            { question: "Radhakrishnan's view of philosophy emphasizes it as a:", options: ["Purely academic discipline", "Way of life and a view of the world", "Set of rules for behavior", "Historical curiosity"], answer: "Way of life and a view of the world" },
+            { question: "The essay suggests that the greatest achievements of the human mind are products of:", options: ["Mechanical repetition", "Logical deduction alone", "Happy accidents", "Integral thinking involving the whole personality"], answer: "Integral thinking involving the whole personality" }
+        ],
+        suggestions: [
+            { question: "Who is the author of Gitanjali Song 45?", options: ["Sarvepalli Radhakrishnan", "Nissim Ezekiel", "Rabindranath Tagore", "Gauri Deshpande"], answer: "Rabindranath Tagore" },
+            { question: "What is the recurring line in Gitanjali Song 45?", options: ["He laughs, laughs, ever laughs.", "He waits, waits, ever waits.", "He comes, comes, ever comes.", "He speaks, speaks, ever speaks."], answer: "He comes, comes, ever comes." },
+            { question: "In Gitanjali Song 45, the 'golden touch of his feet' symbolizes:", options: ["Sadness", "Divinity and joy", "Pain and suffering", "Destruction"], answer: "Divinity and joy" },
+            { question: "In Gitanjali Song 45, the 'rainy gloom' is associated with which month?", options: ["April", "May", "June", "July"], answer: "July" },
+            { question: "In 'In a Country Cottage,' what does the cottage represent besides a physical place?", options: ["A financial burden", "A point of view and a state of mind", "A temporary shelter", "A link to the past"], answer: "A point of view and a state of mind" },
+            { question: "What kind of lifestyle does Ezekiel contrast in 'In a Country Cottage'?", options: ["Urban vs. international", "Rural vs. tribal", "Urban vs. countryside", "Fast vs. futuristic"], answer: "Urban vs. countryside" },
+            { question: "The poem 'In a Country Cottage' concludes with the speakers realizing they are a part of what?", options: ["A new social circle", "The natural world", "A historical tradition", "A complex illusion"], answer: "The natural world" },
+            { question: "What word best describes the tone of Gauri Deshpande's 'The Female of the Species'?", options: ["Playful", "Ironic", "Angry", "Introspective"], answer: "Introspective" },
+            { question: "In 'The Female of the Species,' what does the speaker explicitly want to do with another woman?", options: ["Go shopping for clothes", "Start a protest", "Talk about love and despair", "Cook a large meal"], answer: "Talk about love and despair" },
+            { question: "Gauri Deshpande's poem deals with:", options: ["Village politics", "Economic reform", "Female solidarity and shared experience", "Child education"], answer: "Female solidarity and shared experience" },
+            { question: "The speaker in 'A Day's Wait' is:", options: ["A school teacher", "The boy's mother", "The boy", "The boy's father"], answer: "The boy's father" },
+            { question: "What is Schatz suffering from in 'A Day's Wait'?", options: ["Broken bone", "Influenza", "Headache", "Cold"], answer: "Influenza" },
+            { question: "Schatz fears death because:", options: ["He heard a ghost", "He had pneumonia", "He misinterprets the thermometer", "His friend died recently"], answer: "He misinterprets the thermometer" },
+            { question: "What was Schatz's fever temperature in Fahrenheit?", options: ["98", "100", "102", "104"], answer: "102" },
+            { question: "What book does the father try to read to Schatz?", options: ["The Arabian Nights", "Howard Pyle's Book of Pirates", "Treasure Island", "Huckleberry Finn"], answer: "Howard Pyle's Book of Pirates" },
+            { question: "What literary device is used most in Gitanjali Song 45?", options: ["Irony", "Paradox", "Repetition", "Metaphor"], answer: "Repetition" },
+            { question: "In 'Intuition and Genius', Radhakrishnan argues that great discoveries come from:", options: ["Habitual logic", "Mechanical thinking", "Intuition and creative insight", "Routine study"], answer: "Intuition and creative insight" },
+            { question: "According to Radhakrishnan, intuition is:", options: ["Opposed to intellect", "Blind guessing", "Rooted in spiritual wisdom", "Never useful"], answer: "Rooted in spiritual wisdom" },
+            { question: "In 'Intuition and Genius,' which figure's discovery about a crown is used as an example of intuition?", options: ["Pythagoras", "Newton", "Archimedes", "Euclid"], answer: "Archimedes" },
+            { question: "What is the 'art of discovery' described as?", options: ["Intellectual reasoning", "Logical synthesis", "Adventure of the mind", "Common sense"], answer: "Adventure of the mind" },
+            { question: "In 'The Stolen Bacillus', the Bacteriologist is:", options: ["A police officer", "A teacher", "A scientist", "A journalist"], answer: "A scientist" },
+            { question: "What is the visitor in 'The Stolen Bacillus' secretly?", options: ["A philosopher", "A politician", "An anarchist", "A medical student"], answer: "An anarchist" },
+            { question: "The stolen tube actually contained a bacillus that:", options: ["Was a cure for cholera", "Was completely harmless water", "Causes blue patches on animals", "Was a deadly strain of influenza"], answer: "Causes blue patches on animals" },
+            { question: "What is the tone of 'The Stolen Bacillus'?", options: ["Solemn", "Tragic", "Ironic and farcical", "Romantic"], answer: "Ironic and farcical" },
+            { question: "Who is Minnie in 'The Stolen Bacillus'?", options: ["Housemaid", "Bacteriologist's wife", "Neighbor", "Sister"], answer: "Bacteriologist's wife" },
+            { question: "According to 'Intuition and Genius', philosophy should be:", options: ["Technological", "Abstract and obscure", "A system of logic", "An insight into the whole experience"], answer: "An insight into the whole experience" },
+            { question: "Which philosopher, known for his work on creative evolution, is cited by Radhakrishnan?", options: ["Rousseau", "Bergson", "Kant", "Spinoza"], answer: "Bergson" },
+            { question: "Intuition according to Radhakrishnan is closest to:", options: ["Data analysis", "An instinctive grasp", "Guesswork", "Common logic"], answer: "An instinctive grasp" },
+            { question: "What happens when Schatz understands the thermometer error?", options: ["He gets angry", "His body relaxes", "He runs away", "He faints"], answer: "His body relaxes" },
+            { question: "'The Female of the Species' by Gauri Deshpande is about:", options: ["Female education", "Household chores", "Emotional solidarity among women", "Protest movements"], answer: "Emotional solidarity among women" },
+            { question: "What does Radhakrishnan say imagination must be guided by?", options: ["Emotion", "Daydreaming", "Logic", "Impulse"], answer: "Logic" },
+            { question: "According to the Bacteriologist, how safe is the germ tube?", options: ["Very dangerous", "Totally safe in its sealed condition", "Harmless", "Already inactive"], answer: "Totally safe in its sealed condition" },
+            { question: "What humorous outcome does the Bacteriologist imagine for the Anarchist at the end of the story?", options: ["He will become a famous hero", "He will turn blue", "He will confess to the police", "He will become a great scientist"], answer: "He will turn blue" },
+            { question: "The anarchist's main motive is to:", options: ["Become rich", "Create chaos for his political cause", "Get revenge", "Conduct research"], answer: "Create chaos for his political cause" },
+            { question: "The word 'Reverie' means:", options: ["Confusion", "Emotional drama", "Daydreaming", "Tension"], answer: "Daydreaming" },
+            { question: "In Gitanjali Song 45, the repetition of 'He comes...' signifies:", options: ["Pain", "Fear", "The eternal presence of the divine", "Regret"], answer: "The eternal presence of the divine" },
+            { question: "What does 'intellectual passivity' mean in 'Intuition and Genius'?", options: ["Giving up thinking", "Allowing the subconscious mind to work on a problem", "Refusing to study", "Mental laziness"], answer: "Allowing the subconscious mind to work on a problem" },
+            { question: "What kind of poem is Gauri Deshpande's 'The Female of the Species'?", options: ["Romantic", "Confessional", "Dramatic monologue", "Lyrical narrative"], answer: "Confessional" },
+            { question: "In 'In a Country Cottage,' the 'city attitude' is primarily associated with what?", options: ["A love of art and culture", "A superficial view of relationships", "A desire for wealth", "A fast-paced lifestyle"], answer: "A superficial view of relationships" },
+            { question: "Who said, 'You mustn't get what I have'?", options: ["Bacteriologist", "Schatz", "Anarchist", "Father"], answer: "Schatz" },
+            { question: "Who refers to blue patches on animals in 'The Stolen Bacillus'?", options: ["The anarchist", "The narrator", "The Bacteriologist", "Minnie"], answer: "The Bacteriologist" },
+            { question: "In 'The Female of the Species,' what does the ability to understand 'the pauses' in conversation imply?", options: ["A knowledge of grammar", "A sign of impatience", "A deep, empathetic connection", "A logical thought process"], answer: "A deep, empathetic connection" },
+            { question: "Radhakrishnan believes that after an intuitive insight, proof is achieved by:", options: ["Another intuition", "Faith", "Logic", "Inspiration"], answer: "Logic" },
+            { question: "According to the text, philosophy must not only be intellectual but also:", options: ["Mathematical", "Abstract", "Experiential", "Mythical"], answer: "Experiential" },
+            { question: "In 'A Day's Wait', Schatz mistakes the temperature reading due to:", options: ["Mishearing the doctor", "Confusing the Celsius and Fahrenheit scales", "His father's joke", "Reading the wrong medicine bottle"], answer: "Confusing the Celsius and Fahrenheit scales" },
+            { question: "Who pursues the anarchist in 'The Stolen Bacillus'?", options: ["A policeman", "A cab driver", "The Bacteriologist", "Minnie"], answer: "The Bacteriologist" },
+            { question: "Who said: 'I have drunk it. The cholera is abroad!'?", options: ["Schatz", "Bacteriologist", "Anarchist", "Minnie"], answer: "Anarchist" },
+            { question: "What is 'darsana' according to Radhakrishnan?", options: ["Scientific logic", "Philosophy as a direct insight into reality", "Religious control", "Literary vision"], answer: "Philosophy as a direct insight into reality" },
+            { question: "What is described as the spark that lights the fire of discovery?", options: ["Logic", "Experience", "Genius", "Discipline"], answer: "Genius" },
+            { question: "The final attitude of the anarchist, before the truth is revealed, is one of:", options: ["Triumph", "Regret", "Peace", "Tragic heroism"], answer: "Triumph" }
+        ]
+    };
+
+    const allPages = document.querySelectorAll('.page');
+    const homeLinks = document.querySelectorAll('.home-link');
+    const closeButtons = document.querySelectorAll('.close-btn');
+    const startQuizButtons = document.querySelectorAll('.start-quiz-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const goBackBtn = document.getElementById('go-back-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    let currentQuizData = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let userAnswers = [];
+    let activeQuizId = '';
+    let lastStartPage = 'home-page';
+
+    function showPage(pageId) {
+        allPages.forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById(pageId).classList.add('active');
+    }
+
+    homeLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetPageId = e.target.getAttribute('data-target');
+            lastStartPage = targetPageId;
+            showPage(targetPageId);
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Use currentTarget to ensure we get the div, not the svg inside
+            const targetPageId = e.currentTarget.getAttribute('data-target');
+            showPage(targetPageId);
+        });
+    });
+    
+    startQuizButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            activeQuizId = e.target.getAttribute('data-quiz');
+            startQuiz(activeQuizId);
+        });
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        showPage(lastStartPage);
+    });
+
+    goBackBtn.addEventListener('click', () => {
+         showPage(lastStartPage);
+    });
+
+    function startQuiz(quizId) {
+        currentQuizData = quizzes[quizId];
+        currentQuestionIndex = 0;
+        score = 0;
+        userAnswers = [];
+        showPage('quiz-page');
+        displayQuestion();
+    }
+
+    function displayQuestion() {
+        resetState();
+        const questionData = currentQuizData[currentQuestionIndex];
+        document.getElementById('question-number').textContent = `Question ${currentQuestionIndex + 1}/${currentQuizData.length}`;
+        document.getElementById('question-text').textContent = questionData.question;
+        
+        const optionsContainer = document.getElementById('options-container');
+        questionData.options.forEach(option => {
+            const button = document.createElement('button');
+            button.innerHTML = option;
+            button.classList.add('option-btn', 'w-full', 'p-4', 'text-left', 'bg-gray-100', 'rounded-lg', 'hover:bg-gray-200');
+            button.addEventListener('click', selectAnswer);
+            optionsContainer.appendChild(button);
+        });
+    }
+    
+    function resetState() {
+        nextBtn.classList.add('hidden');
+        const optionsContainer = document.getElementById('options-container');
+        while (optionsContainer.firstChild) {
+            optionsContainer.removeChild(optionsContainer.firstChild);
+        }
+    }
+
+    function selectAnswer(e) {
+        const selectedBtn = e.target;
+        const correct = selectedBtn.textContent === currentQuizData[currentQuestionIndex].answer;
+        userAnswers[currentQuestionIndex] = selectedBtn.textContent;
+
+        if (correct) {
+            selectedBtn.classList.add('correct');
+            score++;
+        } else {
+            selectedBtn.classList.add('incorrect');
+        }
+
+        Array.from(document.getElementById('options-container').children).forEach(button => {
+            if (button.textContent === currentQuizData[currentQuestionIndex].answer) {
+                if(!button.classList.contains('correct')) {
+                    button.classList.add('correct');
+                }
+            }
+            button.disabled = true;
+        });
+        nextBtn.classList.remove('hidden');
+    }
+
+    nextBtn.addEventListener('click', () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < currentQuizData.length) {
+            displayQuestion();
+        } else {
+            showResult();
+        }
+    });
+
+    function showResult() {
+        showPage('result-page');
+        document.getElementById('score').textContent = score;
+        document.getElementById('total-questions').textContent = currentQuizData.length;
+
+        const summaryList = document.getElementById('summary-list');
+        summaryList.innerHTML = '';
+        currentQuizData.forEach((question, index) => {
+            const item = document.createElement('div');
+            item.classList.add('result-item', 'bg-gray-50', 'p-4', 'rounded-lg');
+            const userAnswer = userAnswers[index];
+            const correctAnswer = question.answer;
+
+            let answerHTML = `<p class="font-semibold text-gray-700">Q${index + 1}: ${question.question}</p>`;
+            if (userAnswer === correctAnswer) {
+                answerHTML += `<p class="text-green-600 mt-1"><strong>Your Answer:</strong> ${userAnswer}</p>`;
+            } else {
+                answerHTML += `<p class="text-red-600 mt-1"><strong>Your Answer:</strong> ${userAnswer}</p>`;
+                answerHTML += `<p class="text-green-600 mt-1"><strong>Correct Answer:</strong> ${correctAnswer}</p>`;
+            }
+            item.innerHTML = answerHTML;
+            summaryList.appendChild(item);
+        });
+    }
+
+</script>
+</body>
+</html>
